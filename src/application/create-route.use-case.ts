@@ -9,6 +9,7 @@ type CreateRouteInput = {
 }
 
 type CreateRouteOutput = {
+    id: string;
     title: string;
     startPosition: LatLng;
     endPosition: LatLng;
@@ -16,7 +17,7 @@ type CreateRouteOutput = {
 }
 
 // Single Responsability Principle
-class CreateRouteUseCase {
+export class CreateRouteUseCase {
     constructor(private routeRepository: RouteRepositoryInterface) { }
 
     // Operations on top of entities

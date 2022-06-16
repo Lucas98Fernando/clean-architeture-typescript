@@ -20,6 +20,7 @@ describe("Route Tests", () => {
             points: [{ lat: 10, lng: 12 }]
         }
         route = new Route(routeProps)
+        expect(route.id).toBeDefined()
         expect(route.props).toStrictEqual({
             ...routeProps,
             points: [{ lat: 10, lng: 12 }]
@@ -60,7 +61,7 @@ describe("Route Tests", () => {
         const route = new Route(routeProps)
         const points: LatLng[] = [{ lat: 1, lng: 2 }, { lat: 3, lng: 4 }]
         route.updatePoints(points)
-        expect(route.points).toHaveLength(2)
+        expect(route.points).toHaveLength(points.length)
         expect(route.points).toStrictEqual(points)
     })
 })
